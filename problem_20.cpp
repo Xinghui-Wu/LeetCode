@@ -75,9 +75,13 @@ public:
 		// If the bracket stack is empty, return true.
 		// Otherwise, return false.
 		if (parenthesis_stack.empty())
+        {
 			return true;
+        }
 		else
+        {
 			return false;
+        }
     }
 };
 
