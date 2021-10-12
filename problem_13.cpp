@@ -44,7 +44,8 @@ public:
         int roman_int = roman_int_map[s[s.length() - 1]];
         
         // The corresponding value of the current and the next roman character.
-        int current, next;
+        int current;
+        int next;
 
         for (size_t i = 0; i < s.length() - 1; i++)
         {
