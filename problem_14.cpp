@@ -32,7 +32,6 @@ public:
             {
                 shortest_string = strs[i];
             }
-            
         }
 
 		// The main idea is to get a prefix of the shortest string at a time and check if it is a common prefix.
@@ -46,7 +45,8 @@ public:
         bool is_common_prefix;
 
 		// Binary Search
-		while(left <= right) {
+		while (left <= right)
+        {
 			mid = (left + right) / 2;
 			prefix = shortest_string.substr(0, mid + 1);
 			is_common_prefix = true;
@@ -63,10 +63,14 @@ public:
 
 			// Continue the search process in the second half of the previous range.
 			if (is_common_prefix)
+            {
 				left = mid + 1;
+            }
 			// Continue the search process in the first half of the previous range.
 			else
+            {
 				right = mid - 1;
+            }
 		}
 
 		// The end index of the longest common prefix is (left - 1), and left could be 0 indicating that the result is an empty string.
