@@ -5,7 +5,7 @@
  * An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
  * 
  * Constraints:
- * -2^31 <= x <= 2^31 - 1
+ *   -2^31 <= x <= 2^31 - 1
  * 
  * Difficulty: Easy
  * Related Topics: Math
