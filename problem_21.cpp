@@ -70,10 +70,6 @@ int main()
     ListNode* merged_list = solution.mergeTwoLists(l1, l2);
 
     output_list(merged_list);
-    cout << endl;
-    output_list(l1);
-    cout << endl;
-    output_list(l2);
 
     return 0;
 }
