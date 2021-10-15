@@ -38,7 +38,7 @@ public:
         int k = 0;
 
         // Compare each element in the vector with the current one indexed by k.
-        for (int i = 1; i < nums.size(); i++)
+        for (size_t i = 1; i < nums.size(); i++)
         {
             if (nums[i] != nums[k])
             {
