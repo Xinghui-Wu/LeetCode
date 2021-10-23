@@ -49,17 +49,21 @@ public:
                 }
                 else
                 {
-                    current = current + length + digit;
+                    current.push_back(length);
+                    current.push_back(digit);
+
                     digit = previous[j];
                     length = '1';
                 }
             }
 
-            current = current + length + digit;
+            current.push_back(length);
+            current.push_back(digit);
+
             previous = current;
         }
         
-        return previous;
+        return current;
     }
 };
 
