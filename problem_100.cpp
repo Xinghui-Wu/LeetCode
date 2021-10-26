@@ -47,6 +47,7 @@ public:
         {
             p_current = p_tree_node_queue.front();
             p_tree_node_queue.pop();
+            
             q_current = q_tree_node_queue.front();
             q_tree_node_queue.pop();
 
