@@ -13,6 +13,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <algorithm>
 #include "node.h"
 
 using namespace std;
@@ -33,41 +34,39 @@ public:
         queue<TreeNode*> tree_node_queue;
         tree_node_queue.push(root);
 
-        queue<int> depth_queue;
-        depth_queue.push(1);
-
         TreeNode* current;
-        int current_depth;
+        int num_level_tree_nodes;
 
         // Breadth-First Search with Queue
         while (!tree_node_queue.empty())
         {
-            current = tree_node_queue.front();
-            tree_node_queue.pop();
-
-            current_depth = depth_queue.front();
-            depth_queue.pop();
-
             // Expand the current vector when going down to the next level.
-            if (current_depth > level_order_val_list.size())
-            {
-                vector<int> level_val_list;
-                level_order_val_list.insert(level_order_val_list.begin(), level_val_list);
-            }
+            vector<int> level_val_list;
             
-            level_order_val_list[0].push_back(current->val);
+            num_level_tree_nodes = tree_node_queue.size();
 
-            if (current->left != nullptr)
+            // All tree nodes in the current queue are from the same level.
+            for (size_t i = 0; i < num_level_tree_nodes; i++)
             {
-                tree_node_queue.push(current->left);
-                depth_queue.push(current_depth + 1);
+                current = tree_node_queue.front();
+                tree_node_queue.pop();
+
+                level_val_list.push_back(current->val);
+
+                if (current->left != nullptr)
+                {
+                    tree_node_queue.push(current->left);
+                }
+                if (current->right != nullptr)
+                {
+                    tree_node_queue.push(current->right);
+                }
             }
-            if (current->right != nullptr)
-            {
-                tree_node_queue.push(current->right);
-                depth_queue.push(current_depth + 1);
-            }
+
+            level_order_val_list.push_back(level_val_list);
         }
+
+        reverse(level_order_val_list.begin(), level_order_val_list.end());
 
         return level_order_val_list;
     }
