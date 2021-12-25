@@ -27,66 +27,33 @@ public:
     {
         ListNode* sum = new ListNode();
         ListNode* current = sum;
-        ListNode* temp = nullptr;
         
         int digit_sum;
         int carry = 0;
 
         // Add l1 and l2 digit by digit.
-        while (l1 != nullptr && l2 != nullptr)
+        while (l1 != nullptr || l2 != nullptr)
         {
-            digit_sum = l1->val + l2->val + carry;
+            digit_sum = carry;
 
-            if (digit_sum <= 9)
+            if (l1 != nullptr)
             {
-                carry = 0;
+                digit_sum += l1->val;
+                l1 = l1->next;
             }
-            else
+            if (l2 != nullptr)
             {
-                digit_sum -= 10;
-                carry = 1;
+                digit_sum += l2->val;
+                l2 = l2->next;
             }
 
-            current->next = new ListNode();
+            carry = digit_sum / 10;
+
+            current->next = new ListNode(digit_sum % 10);
             current = current->next;
-            current->val = digit_sum;
-            
-            l1 = l1->next;
-            l2 = l2->next;
         }
 
-        if (l1 != nullptr)
-        {
-            temp = l1;
-        }
-        else if (l2 != nullptr)
-        {
-            temp = l2;
-        }
-
-        // Add the rest of l1 or l2.
-        while (temp != nullptr)
-        {
-            digit_sum = temp->val + carry;
-
-            if (digit_sum <= 9)
-            {
-                carry = 0;
-            }
-            else
-            {
-                digit_sum -= 10;
-                carry = 1;
-            }
-            
-            current->next = new ListNode();
-            current = current->next;
-            current->val = digit_sum;
-
-            temp = temp->next;
-        }
-
-        if (temp == nullptr && carry == 1)
+        if (carry == 1)
         {
             current->next = new ListNode(1);
         }
