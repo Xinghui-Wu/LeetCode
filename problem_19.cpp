@@ -26,39 +26,25 @@ class Solution
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n)
     {
-        ListNode* current = head;
+        ListNode* dummy = new ListNode(0, head);
+        ListNode* slow = dummy;
+        ListNode* fast = dummy;
 
-        // Count the number of nodes in the list.
-        int length = 0;
-        
-        while (current != nullptr)
+        // Let the fast pointer go first and keep the distance from the slow pointer.
+        for (size_t i = 0; i <= n; i++)
         {
-            length++;
-            current = current->next;
-        }
-
-        // Remove the only node.
-        if (length == 1)
-        {
-            return nullptr;
+            fast = fast->next;
         }
         
-        // Remove the first node.
-        if (n == length)
+        while (fast != nullptr)
         {
-            return head->next;
+            slow = slow->next;
+            fast = fast->next;
         }
 
-        current = head;
+        slow->next = slow->next->next;
 
-        for (size_t i = 1; i < length - n; i++)
-        {
-            current = current->next;
-        }
-
-        current->next = current->next->next;
-        
-        return head;
+        return dummy->next;
     }
 };
 
@@ -69,7 +55,7 @@ int main()
     ListNode* head = create_list(val_list, 5);
 
     Solution solution;
-    head = solution.removeNthFromEnd(head, 4);
+    head = solution.removeNthFromEnd(head, 2);
 
     output_list(head);
 
