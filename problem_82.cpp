@@ -55,7 +55,7 @@ public:
 
 int main()
 {
-    int val_list[] = {-1000, 1, 2, 3, 3, 4, 4, 5};
+    int val_list[] = {1, 2, 3, 3, 4, 4, 5};
     ListNode* head = create_list(val_list, 7);
 
     Solution solution;
