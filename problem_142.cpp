@@ -21,7 +21,6 @@
  * Related Topics: Hash Table, Linked List, Two Pointers
  */
 #include <iostream>
-#include <unordered_set>
 #include "node.h"
 
 using namespace std;
@@ -32,23 +31,43 @@ class Solution
 public:
     ListNode* detectCycle(ListNode* head)
     {
-        unordered_set<ListNode*> list_node_set;
-
-        while (head != nullptr)
+        if (head == nullptr || head->next == nullptr)
         {
-            if (list_node_set.count(head))
-            {
-                return head;
-            }
-            else
-            {
-                list_node_set.insert(head);
-            }
-
-            head = head->next;
+            return nullptr;
         }
 
-        return nullptr;
+        // Traverse the list with two pointers at different speed: a slow pointer and a fast pointer.
+        ListNode* slow = head;
+        ListNode* fast = head->next;
+
+        // If there is no cycle in the list, the fast pointer will eventually reach the end and we can return false in this case.
+        while (slow != fast)
+        {
+            if (fast == nullptr || fast->next == nullptr)
+            {
+                return nullptr;
+            }
+            
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        // l1 is the distance between the head node and the cycle entry node.
+        // l2 is the distance between the cycle entry node and the meeting node.
+        // c is the length of the cycle.
+        // The slow pointer moves l1 + l2 steps, while the fast pointer moves l1 + l2 - 1 + nc steps.
+        // 2 (l1 + l2) = l1 + l2 - 1 + nc
+        // l1 = nc - 1 - l2 = (n - 1)c + (c - l2) - 1
+        // After the slow pointer moves one more step, the head pointer and the slow pointer need the same steps to reach the cycle entry.
+        slow = slow->next;
+
+        while (head != slow)
+        {
+            head = head->next;
+            slow = slow->next;
+        }
+        
+        return head;
     }
 };
 
