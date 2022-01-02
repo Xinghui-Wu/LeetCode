@@ -27,14 +27,21 @@ class Solution
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists)
     {
-        ListNode* merged_list = nullptr;
-
-        for (size_t i = 0; i < lists.size(); i++)
+        if (lists.size() == 0)
         {
-            merged_list = mergeTwoLists(merged_list, lists[i]);
+            return nullptr;
         }
         
-        return merged_list;
+        // Bottom Up Merge Sort
+        for (int size = 1; size < lists.size(); size <<= 1)
+        {
+            for (int i = 0; i < lists.size() - size; i += 2 * size)
+            {
+                lists[i] = mergeTwoLists(lists[i], lists[i + size]);
+            }
+        }
+        
+        return lists[0];
     }
 
 
