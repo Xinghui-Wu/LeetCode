@@ -27,31 +27,14 @@ class Solution
 public:
     bool isValidBST(TreeNode* root)
     {
-        vector<int> inorder_val_list = inorderTraversal(root);
-
-        // The inorder traversal of a BST should be a sorted list.
-        for (size_t i = 1; i < inorder_val_list.size(); i++)
-        {
-            if (inorder_val_list[i] <= inorder_val_list[i - 1])
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    
-    /**
-     * Binary Tree Inorder Traversal
-     */
-    vector<int> inorderTraversal(TreeNode* root)
-    {
-        vector<int> inorder_val_list;
-
         stack<TreeNode*> tree_node_stack;
-        TreeNode* current = root;
 
+        TreeNode* current = root;
+        TreeNode* prev = nullptr;
+
+        // Use a DFS stack to do the binary tree inorder traversal.
+        // The inorder traversal of a BST should be a sorted list.
+        // The value of the current visited node should be larger than that of the previous visited node.
         while (current != nullptr || !tree_node_stack.empty())
         {
             while (current != nullptr)
@@ -63,12 +46,16 @@ public:
             current = tree_node_stack.top();
             tree_node_stack.pop();
 
-            inorder_val_list.push_back(current->val);
+            if (prev != nullptr && current->val <= prev->val)
+            {
+                return false;
+            }
             
+            prev = current;
             current = current->right;
         }
 
-        return inorder_val_list;
+        return true;
     }
 };
 
