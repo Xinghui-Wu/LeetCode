@@ -13,7 +13,6 @@
 #include <iostream>
 #include <vector>
 #include <queue>
-#include <algorithm>
 #include "node.h"
 
 using namespace std;
@@ -36,15 +35,15 @@ public:
 
         TreeNode* current;
         int num_level_tree_nodes;
-        bool right_to_left = false;
+        bool left_to_right = true;
 
         // Breadth-First Search with Queue
         while (!tree_node_queue.empty())
         {
-            // Expand the current vector when going down to the next level.
-            vector<int> level_val_list;
-            
             num_level_tree_nodes = tree_node_queue.size();
+            
+            // Expand the current vector when going down to the next level.
+            vector<int> level_val_list(num_level_tree_nodes);
 
             // All tree nodes in the current queue are from the same level.
             for (size_t i = 0; i < num_level_tree_nodes; i++)
@@ -52,7 +51,15 @@ public:
                 current = tree_node_queue.front();
                 tree_node_queue.pop();
 
-                level_val_list.push_back(current->val);
+                // level_val_list.push_back(current->val);
+                if (left_to_right)
+                {
+                    level_val_list[i] = current->val;
+                }
+                else
+                {
+                    level_val_list[num_level_tree_nodes - 1 - i] = current->val;
+                }
 
                 if (current->left != nullptr)
                 {
@@ -63,15 +70,10 @@ public:
                     tree_node_queue.push(current->right);
                 }
             }
-
-            if (right_to_left)
-            {
-                reverse(level_val_list.begin(), level_val_list.end());
-            }
             
             level_order_val_list.push_back(level_val_list);
 
-            right_to_left = !right_to_left;
+            left_to_right = !left_to_right;
         }
         
         return level_order_val_list;
