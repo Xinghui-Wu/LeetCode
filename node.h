@@ -33,4 +33,7 @@ struct TreeNode
     TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
+// Output the binary tree level order traversal.
+void output_level_order_traversal(TreeNode* root);
+
 #endif
