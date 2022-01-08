@@ -23,31 +23,11 @@ class Solution
 public:
     vector<int> rightSideView(TreeNode* root)
     {
-        vector<vector<int>> level_order_val_list = levelOrder(root);
-        vector<int> level_val_list;
-
-        vector<int> right_side_view(level_order_val_list.size());
-
-        for (size_t i = 0; i < level_order_val_list.size(); i++)
-        {
-            level_val_list = level_order_val_list[i];
-            right_side_view[i] = level_val_list[level_val_list.size() - 1];
-        }
-
-        return right_side_view;
-    }
-
-
-    /**
-     * Binary Tree Level Order Traversal
-     */
-    vector<vector<int>> levelOrder(TreeNode* root)
-    {
-        vector<vector<int>> level_order_val_list;
+        vector<int> right_side_view;
 
         if (root == nullptr)
         {
-            return level_order_val_list;
+            return right_side_view;
         }
         
         queue<TreeNode*> tree_node_queue;
@@ -61,16 +41,11 @@ public:
         {
             num_level_tree_nodes = tree_node_queue.size();
 
-            // Expand the current vector when going down to the next level.
-            vector<int> level_val_list(num_level_tree_nodes);
-
             // All tree nodes in the current queue are from the same level.
             for (size_t i = 0; i < num_level_tree_nodes; i++)
             {
                 current = tree_node_queue.front();
                 tree_node_queue.pop();
-
-                level_val_list[i] = current->val;
 
                 if (current->left != nullptr)
                 {
@@ -82,10 +57,10 @@ public:
                 }
             }
 
-            level_order_val_list.push_back(level_val_list);
+            right_side_view.push_back(current->val);
         }
         
-        return level_order_val_list;
+        return right_side_view;
     }
 };
 
