@@ -39,10 +39,10 @@ public:
         // Breadth-First Search with Queue
         while (!tree_node_queue.empty())
         {
-            // Expand the current vector when going down to the next level.
-            vector<int> level_val_list;
-            
             num_level_tree_nodes = tree_node_queue.size();
+
+            // Expand the current vector when going down to the next level.
+            vector<int> level_val_list(num_level_tree_nodes);
 
             // All tree nodes in the current queue are from the same level.
             for (size_t i = 0; i < num_level_tree_nodes; i++)
@@ -50,7 +50,7 @@ public:
                 current = tree_node_queue.front();
                 tree_node_queue.pop();
 
-                level_val_list.push_back(current->val);
+                level_val_list[i] = current->val;
 
                 if (current->left != nullptr)
                 {
