@@ -13,6 +13,7 @@
  * Related Topics: Tree, Depth-First Search, Binary Tree
  */
 #include <iostream>
+#include <unordered_map>
 #include "node.h"
 
 using namespace std;
@@ -20,15 +21,13 @@ using namespace std;
 
 class Solution
 {
-private:
-    int num_paths;
-
 public:
     int pathSum(TreeNode* root, int targetSum)
     {
-        num_paths = 0;
+        unordered_map<long, int> prefix_sum;
+        prefix_sum[0] = 1;
 
-        traverse(root, targetSum);
+        int num_paths = dfs(root, prefix_sum, 0, targetSum);
 
         return num_paths;
     }
@@ -36,41 +35,33 @@ public:
 
     /**
      * Traverse the binary tree with DFS recursively.
-     * Visit each and every node in the tree.
+     * Save the prefix sum of the path starting from the root node and ending at the current node.
+     * Based on the current and historical prefix sum records, count the number of paths.
      */
-    void traverse(TreeNode* root, int targetSum)
+    int dfs(TreeNode* current, unordered_map<long, int>& prefix_sum, long current_sum, int targetSum)
     {
-        if (root == nullptr)
+        if (current == nullptr)
         {
-            return;
+            return 0;
         }
 
-        find_path(root, targetSum);
+        // Update the prefix sum of the current node.
+        current_sum += current->val;
 
-        traverse(root->left, targetSum);
-        traverse(root->right, targetSum);
-    }
+        // Use the difference between curren prefix sum and target sum to count the paths ending at the current node.
+        int num_paths = prefix_sum[current_sum - targetSum];
 
+        // Update the hashmap with the current prefix sum.
+        prefix_sum[current_sum]++;
 
-    /**
-     * Start from the root node, and find a path that satisfies the requirement.
-     */
-    void find_path(TreeNode* root, int targetSum)
-    {
-        if (root == nullptr)
-        {
-            return;
-        }
+        // Search the left and right subtrees.
+        num_paths += dfs(current->left, prefix_sum, current_sum, targetSum);
+        num_paths += dfs(current->right, prefix_sum, current_sum, targetSum);
         
-        targetSum -= root->val;
-        
-        if (targetSum == 0)
-        {
-            num_paths++;
-        }
+        // Backtrack to the parent node.
+        prefix_sum[current_sum]--;
 
-        find_path(root->left, targetSum);
-        find_path(root->right, targetSum);
+        return num_paths;
     }
 };
 
