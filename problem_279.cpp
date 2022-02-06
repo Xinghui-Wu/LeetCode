@@ -13,7 +13,6 @@
  */
 #include <iostream>
 #include <vector>
-#include <math.h>
 
 using namespace std;
 
@@ -33,26 +32,17 @@ public:
 
         for (int i = num_squares_records.size(); i <= n; i++)
         {
-            int square = sqrt(i);
+            int num_squares = i;
 
-            if (square * square != i)
+            for (int j = 1; j * j <= i; j++)
             {
-                int num_squares = i;
-                
-                for (int j = 1; j <= i / 2; j++)
+                if (num_squares_records[i - j * j] < num_squares)
                 {
-                    if (num_squares_records[j] + num_squares_records[i - j] < num_squares)
-                    {
-                        num_squares = num_squares_records[j] + num_squares_records[i - j];
-                    }
+                    num_squares = num_squares_records[i - j * j];
                 }
-
-                num_squares_records.push_back(num_squares);
             }
-            else
-            {
-                num_squares_records.push_back(1);
-            }
+            
+            num_squares_records.push_back(num_squares + 1);
         }
         
         return num_squares_records[n];
