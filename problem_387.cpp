@@ -12,7 +12,6 @@
  * Related Topics: Hash Table, String, Queue, Counting
  */
 #include <iostream>
-#include <unordered_map>
 
 using namespace std;
 
@@ -22,16 +21,16 @@ class Solution
 public:
     int firstUniqChar(string s)
     {
-        unordered_map<char, int> char_map;
+        int char_count[26] = {0};
 
-        for (size_t i = 0; i < s.size(); i++)
+        for (char c: s)
         {
-            char_map[s[i]]++;
+            char_count[c - 'a']++;
         }
         
         for (size_t i = 0; i < s.size(); i++)
         {
-            if (char_map[s[i]] == 1)
+            if (char_count[s[i] - 'a'] == 1)
             {
                 return i;
             }
