@@ -10,7 +10,7 @@
  *   Each element in the array appears twice except for one element which appears only once.
  * 
  * Difficulty: Easy
- * Related Topics: Array, Bit Msanipulation
+ * Related Topics: Array, Bit Manipulation
  */
 #include <iostream>
 #include <vector>
