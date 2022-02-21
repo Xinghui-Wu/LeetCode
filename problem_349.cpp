@@ -28,12 +28,12 @@ public:
             return intersection(nums2, nums1);
         }
 
-        unordered_set<int> num_set(nums1.begin(), nums1.end());
+        unordered_set<int> nums_set(nums1.begin(), nums1.end());
         unordered_set<int> intersection_set;
         
         for (size_t i = 0; i < nums2.size(); i++)
         {
-            if (num_set.count(nums2[i]) > 0)
+            if (nums_set.count(nums2[i]) > 0)
             {
                 intersection_set.insert(nums2[i]);
             }
