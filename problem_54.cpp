@@ -67,8 +67,7 @@ public:
 
 int main()
 {
-    // vector<vector<int>> matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
-    vector<vector<int>> matrix = {{7}, {9}, {6}};
+    vector<vector<int>> matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
 
     Solution solution;
     vector<int> spiral_order = solution.spiralOrder(matrix);
