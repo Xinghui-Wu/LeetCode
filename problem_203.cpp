@@ -8,7 +8,7 @@
  *   1 <= Node.val <= 50
  *   0 <= val <= 50
  * 
- * Difficulty: Hard
+ * Difficulty: Easy
  * Related Topics: Linked List, Recursion
  */
 #include <iostream>
