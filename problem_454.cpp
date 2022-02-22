@@ -30,21 +30,25 @@ public:
     {
         int nums_tuples = 0;
 
-        unordered_map<int, int> sum_map1;
-        unordered_map<int, int> sum_map2;
+        unordered_map<int, int> sum_map;
 
-        for (size_t i = 0; i < nums1.size(); i++)
+        for (int a: nums1)
         {
-            for (size_t j = 0; j < nums1.size(); j++)
+            for (int b: nums2)
             {
-                sum_map1[nums1[i] + nums2[j]]++;
-                sum_map2[nums3[i] + nums4[j]]++;
+                sum_map[a + b]++;
             }
         }
 
-        for (auto& sum: sum_map1)
+        for (int c: nums3)
         {
-            nums_tuples += sum.second * sum_map2[0 - sum.first];
+            for (int d: nums4)
+            {
+                if (sum_map.count(0 - c - d) > 0)
+                {
+                    nums_tuples += sum_map[0 - c - d];
+                }
+            }
         }
         
         return nums_tuples;
