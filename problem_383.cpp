@@ -21,22 +21,23 @@ class Solution
 public:
     bool canConstruct(string ransomNote, string magazine)
     {
-        int ransom_note_count[26] = {0};
-        int magazine_count[26] = {0};
-
-        for (char c: ransomNote)
+        if (ransomNote.size() > magazine.size())
         {
-            ransom_note_count[c - 'a']++;
+            return false;
         }
+        
+        int magazine_count[26] = {0};
 
         for (char c: magazine)
         {
             magazine_count[c - 'a']++;
         }
-        
-        for (int i = 0; i < 26; i++)
+
+        for (char c: ransomNote)
         {
-            if (ransom_note_count[i] > magazine_count[i])
+            magazine_count[c - 'a']--;
+
+            if (magazine_count[c - 'a'] < 0)
             {
                 return false;
             }
