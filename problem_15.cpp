@@ -46,13 +46,6 @@ public:
 
             while (j < k)
             {
-                // Skip this iteration to avoid duplicate triplets.
-                if (j > i + 1 && nums[j] == nums[j - 1])
-                {
-                    j++;
-                    continue;
-                }
-                
                 if (nums[i] + nums[j] + nums[k] < 0)
                 {
                     j++;
@@ -65,6 +58,17 @@ public:
                 {
                     triplets.push_back({nums[i], nums[j], nums[k]});
                     j++;
+                    k--;
+
+                    // Skip the iterations to avoid duplicate triplets.
+                    while (j < k && nums[j] == nums[j - 1])
+                    {
+                        j++;
+                    }
+                    while (j < k && nums[k] == nums[k + 1])
+                    {
+                        k--;
+                    }
                 }
             }
         }
