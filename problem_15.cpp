@@ -41,6 +41,15 @@ public:
                 continue;
             }
             
+            if (nums[i] + nums[i + 1] + nums[i + 2] > 0)
+            {
+                break;
+            }
+            if (nums[i] + nums[nums.size() - 2] + nums[nums.size() - 1] < 0)
+            {
+                continue;
+            }
+            
             int j = i + 1;
             int k = nums.size() - 1;
 
