@@ -21,6 +21,7 @@
  * Related Topics: Two Pointers, String
  */
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -30,44 +31,42 @@ class Solution
 public:
     string reverseWords(string s)
     {
-        string reversed_words = "";
+        reverse(s.begin(), s.end());
 
-        int left;
-        int right = s.size() - 1;
+        int i;
+        int j;
+        int index = 0;
 
-        while (true)
+        for (i = 0; i < s.size(); i++)
         {
-            while (right >= 0 && s[right] == ' ')
+            if (s[i] != ' ')
             {
-                right--;
-            }
+                if (index != 0)
+                {
+                    s[index++] = ' ';
+                }
+                
+                for (j = i; j < s.size() && s[j] != ' '; j++)
+                {
+                    s[index++] = s[j];
+                }
+                
+                reverse(s.begin() + index - (j - i), s.begin() + index);
 
-            if (right < 0)
-            {
-                break;
+                i = j;
             }
-
-            left = right - 1;
-            
-            while (left >=0 && s[left] != ' ')
-            {
-                left--;
-            }
-            
-            reversed_words.push_back(' ');
-            reversed_words.append(s.substr(left + 1, right - left));
-
-            right = left;
         }
+        
+        s.erase(s.begin() + index, s.end());
 
-        return reversed_words.substr(1);
+        return s;
     }
 };
 
 
 int main()
 {
-    string s = "the sky is blue";
+    string s = "  hello world  ";
 
     Solution solution;
     s = solution.reverseWords(s);
