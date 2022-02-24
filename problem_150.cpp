@@ -27,7 +27,7 @@ class Solution
 public:
     int evalRPN(vector<string>& tokens)
     {
-        stack<string> token_stack;
+        stack<int> token_stack;
         int operand1;
         int operand2;
 
@@ -35,47 +35,47 @@ public:
         {
             if (token == "+")
             {
-                operand1 = stoi(token_stack.top());
+                operand1 = token_stack.top();
                 token_stack.pop();
-                operand2 = stoi(token_stack.top());
+                operand2 = token_stack.top();
                 token_stack.pop();
 
-                token_stack.push(to_string(operand2 + operand1));
+                token_stack.push(operand2 + operand1);
             }
             else if (token == "-")
             {
-                operand1 = stoi(token_stack.top());
+                operand1 = token_stack.top();
                 token_stack.pop();
-                operand2 = stoi(token_stack.top());
+                operand2 = token_stack.top();
                 token_stack.pop();
 
-                token_stack.push(to_string(operand2 - operand1));
+                token_stack.push(operand2 - operand1);
             }
             else if (token == "*")
             {
-                operand1 = stoi(token_stack.top());
+                operand1 = token_stack.top();
                 token_stack.pop();
-                operand2 = stoi(token_stack.top());
+                operand2 = token_stack.top();
                 token_stack.pop();
 
-                token_stack.push(to_string(operand2 * operand1));
+                token_stack.push(operand2 * operand1);
             }
             else if (token == "/")
             {
-                operand1 = stoi(token_stack.top());
+                operand1 = token_stack.top();
                 token_stack.pop();
-                operand2 = stoi(token_stack.top());
+                operand2 = token_stack.top();
                 token_stack.pop();
 
-                token_stack.push(to_string(operand2 / operand1));
+                token_stack.push(operand2 / operand1);
             }
             else
             {
-                token_stack.push(token);
+                token_stack.push(stoi(token));
             }
         }
 
-        return stoi(token_stack.top());
+        return token_stack.top();
     }
 };
 
