@@ -20,36 +20,7 @@ class Solution
 public:
     bool repeatedSubstringPattern(string s)
     {
-        bool is_repeated;
-        int count;
-        string sub_str;
-
-        for (int length = s.size() / 2; length >= 1; length--)
-        {
-            count = s.size() / length;
-
-            if (length * count == s.size())
-            {
-                is_repeated = true;
-                sub_str = s.substr(0, length);
-
-                for (int i = 1; i < count; i++)
-                {
-                    if (s.substr(i * length, length) != sub_str)
-                    {
-                        is_repeated = false;
-                        break;
-                    }
-                }
-                
-                if (is_repeated)
-                {
-                    return true;
-                }
-            }
-        }
-        
-        return false;
+        return (s + s).find(s, 1) != s.size();
     }
 };
 
