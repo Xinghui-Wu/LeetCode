@@ -4,22 +4,24 @@ This repository documents my LeetCode journey for the practice of data structure
 
 ## Math
 
-|            Problem             |
-| :----------------------------: |
-|       2. Add Two Numbers       |
-|       7. Reverse Integer       |
-|      9. Palindrome Number      |
-|      13. Roman to Integer      |
-|          66. Plus One          |
-|         67. Add Binary         |
-|          69. Sqrt(x)           |
-| 168. Excel Sheet Column Title  |
-| 171. Excel Sheet Column Number |
-|       190. Reverse Bits        |
-|     191. Number of 1 Bits      |
-|      279. Perfect Squares      |
-|       343. Integer Break       |
-|    371. Sum of Two Integers    |
+|                Problem                |
+| :-----------------------------------: |
+|          2. Add Two Numbers           |
+|          7. Reverse Integer           |
+|         9. Palindrome Number          |
+|         13. Roman to Integer          |
+|             66. Plus One              |
+|            67. Add Binary             |
+|              69. Sqrt(x)              |
+| 150. Evaluate Reverse Polish Notation |
+|     168. Excel Sheet Column Title     |
+|    171. Excel Sheet Column Number     |
+|           190. Reverse Bits           |
+|         191. Number of 1 Bits         |
+|           202. Happy Number           |
+|         279. Perfect Squares          |
+|          343. Integer Break           |
+|       371. Sum of Two Integers        |
 
 ## Linear List
 
@@ -28,12 +30,16 @@ This repository documents my LeetCode journey for the practice of data structure
 |                           Problem                           |
 | :---------------------------------------------------------: |
 |                         1. Two Sum                          |
+|               4. Median of Two Sorted Arrays                |
+|                          15. 3Sum                           |
+|                          18. 4Sum                           |
 |           26. Remove Duplicates from Sorted Array           |
 |                     27. Remove Element                      |
 | 34. Find First and Last Position of Element in Sorted Array |
 |                 35. Search Insert Position                  |
 |                    53. Maximum Subarray                     |
 |                      54. Spiral Matrix                      |
+|                    59. Spiral Matrix II                     |
 |                        66. Plus One                         |
 |                   88. Merge Sorted Array                    |
 |                   118. Pascal's Triangle                    |
@@ -41,9 +47,15 @@ This repository documents my LeetCode journey for the practice of data structure
 |            121. Best Time to Buy and Sell Stock             |
 |           122. Best Time to Buy and Sell Stock II           |
 |                     136. Single Number                      |
+|            150. Evaluate Reverse Polish Notation            |
 |           167. Two Sum II - Input Array Is Sorted           |
 |                    169. Majority Element                    |
+|               209. Minimum Size Subarray Sum                |
 |               287. Find the Duplicate Number                |
+|               349. Intersection of Two Arrays               |
+|                        454. 4Sum II                         |
+|                     704. Binary Search                      |
+|               977. Squares of a Sorted Array                |
 
 ### Linked List
 
@@ -53,12 +65,14 @@ This repository documents my LeetCode journey for the practice of data structure
 |   19. Remove Nth Node From End of List    |
 |        21. Merge Two Sorted Lists         |
 |         23. Merge k Sorted Lists          |
+|          24. Swap Nodes in Pairs          |
 | 82. Remove Duplicates from Sorted List II |
 |  83. Remove Duplicates from Sorted List   |
 |          141. Linked List Cycle           |
 |         142. Linked List Cycle II         |
 |              148. Sort List               |
 |   160. Intersection of Two Linked Lists   |
+|     203. Remove Linked List Elements      |
 |         206. Reverse Linked List          |
 |        234. Palindrome Linked List        |
 |     237. Delete Node in a Linked List     |
@@ -67,37 +81,51 @@ This repository documents my LeetCode journey for the practice of data structure
 
 ### Stack
 
-|        Problem        |
-| :-------------------: |
-| 20. Valid Parentheses |
+|                    Problem                     |
+| :--------------------------------------------: |
+|             20. Valid Parentheses              |
+|     150. Evaluate Reverse Polish Notation      |
+| 1047. Remove All Adjacent Duplicates In String |
 
 ### Queue
 
 ## String
 
-|                  Problem                  |
-| :---------------------------------------: |
-|           13. Roman to Integer            |
-|         14. Longest Common Prefix         |
-| 17. Letter Combinations of a Phone Number |
-|           20. Valid Parentheses           |
-|         22. Generate Parentheses          |
-|          28. Implement strStr()           |
-|             38. Count and Say             |
-|          58. Length of Last Word          |
-|              67. Add Binary               |
-|           125. Valid Palindrome           |
-|       168. Excel Sheet Column Title       |
-|      171. Excel Sheet Column Number       |
-|            179. Largest Number            |
-|  387. First Unique Character in a String  |
+|                    Problem                     |
+| :--------------------------------------------: |
+|              13. Roman to Integer              |
+|           14. Longest Common Prefix            |
+|   17. Letter Combinations of a Phone Number    |
+|             20. Valid Parentheses              |
+|            22. Generate Parentheses            |
+|             28. Implement strStr()             |
+|               38. Count and Say                |
+|            58. Length of Last Word             |
+|                 67. Add Binary                 |
+|             125. Valid Palindrome              |
+|         151. Reverse Words in a String         |
+|         168. Excel Sheet Column Title          |
+|         171. Excel Sheet Column Number         |
+|              179. Largest Number               |
+|               242. Valid Anagram               |
+|              344. Reverse String               |
+|                383. Ransom Note                |
+|    387. First Unique Character in a String     |
+|        459. Repeated Substring Pattern         |
+|             541. Reverse String II             |
+| 1047. Remove All Adjacent Duplicates In String |
 
 ## Hash Table
 
-|       Problem        |
-| :------------------: |
-|      1. Two Sum      |
-| 13. Roman to Integer |
+|             Problem             |
+| :-----------------------------: |
+|           1. Two Sum            |
+|      13. Roman to Integer       |
+|        202. Happy Number        |
+|       242. Valid Anagram        |
+| 349. Intersection of Two Arrays |
+|        383. Ransom Note         |
+|          454. 4Sum II           |
 
 ## Tree
 
