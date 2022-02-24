@@ -15,7 +15,6 @@
  * Related Topics: String, Stack
  */
 #include <iostream>
-#include <deque>
 
 using namespace std;
 
@@ -25,32 +24,18 @@ class Solution
 public:
     string removeDuplicates(string s)
     {
-        string reduced_str = "";
+        string reduced_str;
 
-        deque<char> char_deque;
-
-        // Push the characters of s into a deque.
         for (char c: s)
         {
-            if (char_deque.empty())
+            if (!reduced_str.empty() && c == reduced_str.back())
             {
-                char_deque.push_back(c);
-            }
-            else if (c == char_deque.back())
-            {
-                char_deque.pop_back();
+                reduced_str.pop_back();
             }
             else
             {
-                char_deque.push_back(c);
+                reduced_str.push_back(c);
             }
-        }
-        
-        // Pop the characters in the deque.
-        while (!char_deque.empty())
-        {
-            reduced_str.push_back(char_deque.front());
-            char_deque.pop_front();
         }
         
         return reduced_str;
