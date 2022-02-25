@@ -16,6 +16,7 @@
  */
 #include <iostream>
 #include <vector>
+#include <deque>
 
 using namespace std;
 
@@ -26,23 +27,38 @@ public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k)
     {
         vector<int> max_window_nums(nums.size() - k + 1);
-        int max_num;
 
-        for (size_t i = 0; i < max_window_nums.size(); i++)
+        // Use a monotonic queue to save the indices that are still in the window range.
+        // The numbers corresponding to the indices in the queue should be monotonically decreasing.
+        deque<int> monotonic_queue;
+
+        for (int i = 0; i < k - 1; i++)
         {
-            max_num = nums[i];
-
-            for (size_t j = i + 1; j < i + k; j++)
+            while (!monotonic_queue.empty() && nums[i] >= nums[monotonic_queue.back()])
             {
-                if (nums[j] > max_num)
-                {
-                    max_num = nums[j];
-                }
+                monotonic_queue.pop_back();
             }
             
-            max_window_nums[i] = max_num;
+            monotonic_queue.push_back(i);
         }
-        
+
+        for (int i = k - 1; i < nums.size(); i++)
+        {
+            while (!monotonic_queue.empty() && nums[i] >= nums[monotonic_queue.back()])
+            {
+                monotonic_queue.pop_back();
+            }
+            
+            monotonic_queue.push_back(i);
+
+            if (monotonic_queue.front() <= i - k)
+            {
+                monotonic_queue.pop_front();
+            }
+            
+            max_window_nums[i - k + 1] = nums[monotonic_queue.front()];
+        }
+
         return max_window_nums;
     }
 };
