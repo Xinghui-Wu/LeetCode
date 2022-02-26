@@ -64,7 +64,7 @@ int main()
 
     for (size_t i = 0; i < combinations.size(); i++)
     {
-        for (size_t j = 0; j < 2; j++)
+        for (size_t j = 0; j < k; j++)
         {
             cout << combinations[i][j] << "\t";
         }
