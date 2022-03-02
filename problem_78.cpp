@@ -35,11 +35,6 @@ public:
 
     void backtracking(vector<int>& nums, vector<vector<int>>& nums_subsets, vector<int> path, int index)
     {
-        if (index >= nums.size())
-        {
-            return;
-        }
-        
         for (int i = index; i < nums.size(); i++)
         {
             path.push_back(nums[i]);
