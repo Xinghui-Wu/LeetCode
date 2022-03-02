@@ -28,7 +28,7 @@ public:
     {
         vector<string> ip_addresses;
 
-        if (s.size() < 4)
+        if (s.size() < 4 || s.size() > 12)
         {
             return ip_addresses;
         }
