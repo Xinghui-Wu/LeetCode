@@ -25,7 +25,7 @@ public:
     {
         vector<vector<int>> permutations;
         vector<int> path;
-        vector<bool> is_used(21);
+        vector<bool> is_used(nums.size());
 
         backtracking(nums, permutations, path, is_used);
 
@@ -44,12 +44,12 @@ public:
         
         for (int i = 0; i < nums.size(); i++)
         {
-            if (!is_used[nums[i] + 10])
+            if (!is_used[i])
             {
                 path.push_back(nums[i]);
-                is_used[nums[i] + 10] = true;
+                is_used[i] = true;
                 backtracking(nums, permutations, path, is_used);
-                is_used[nums[i] + 10] = false;
+                is_used[i] = false;
                 path.pop_back();
             }
         }
