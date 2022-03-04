@@ -37,11 +37,21 @@ This repository documents my LeetCode journey for the practice of data structure
 |                     27. Remove Element                      |
 | 34. Find First and Last Position of Element in Sorted Array |
 |                 35. Search Insert Position                  |
+|                      37. Sudoku Solver                      |
+|                     39. Combination Sum                     |
+|                   40. Combination Sum II                    |
+|                      46. Permutations                       |
+|                     47. Permutations II                     |
+|                        51. N-Queens                         |
+|                       52. N-Queens II                       |
 |                    53. Maximum Subarray                     |
 |                      54. Spiral Matrix                      |
 |                    59. Spiral Matrix II                     |
 |                        66. Plus One                         |
+|                      77. Combinations                       |
+|                         78. Subsets                         |
 |                   88. Merge Sorted Array                    |
+|                       90. Subsets II                        |
 |                   118. Pascal's Triangle                    |
 |                  119. Pascal's Triangle II                  |
 |            121. Best Time to Buy and Sell Stock             |
@@ -51,9 +61,12 @@ This repository documents my LeetCode journey for the practice of data structure
 |           167. Two Sum II - Input Array Is Sorted           |
 |                    169. Majority Element                    |
 |               209. Minimum Size Subarray Sum                |
+|                  216. Combination Sum III                   |
+|                 239. Sliding Window Maximum                 |
 |               287. Find the Duplicate Number                |
 |               349. Intersection of Two Arrays               |
 |                        454. 4Sum II                         |
+|                491. Increasing Subsequences                 |
 |                     704. Binary Search                      |
 |               977. Squares of a Sorted Array                |
 
@@ -79,15 +92,16 @@ This repository documents my LeetCode journey for the practice of data structure
 |         328. Odd Even Linked List         |
 |      876. Middle of the Linked List       |
 
-### Stack
+### Stack/Queue
 
 |                    Problem                     |
 | :--------------------------------------------: |
 |             20. Valid Parentheses              |
+|               71. Simplify Path                |
 |     150. Evaluate Reverse Polish Notation      |
+|          239. Sliding Window Maximum           |
+|          347. Top K Frequent Elements          |
 | 1047. Remove All Adjacent Duplicates In String |
-
-### Queue
 
 ## String
 
@@ -102,7 +116,10 @@ This repository documents my LeetCode journey for the practice of data structure
 |               38. Count and Say                |
 |            58. Length of Last Word             |
 |                 67. Add Binary                 |
+|               71. Simplify Path                |
+|            93. Restore IP Addresses            |
 |             125. Valid Palindrome              |
+|          131. Palindrome Partitioning          |
 |         151. Reverse Words in a String         |
 |         168. Excel Sheet Column Title          |
 |         171. Excel Sheet Column Number         |
@@ -151,9 +168,46 @@ This repository documents my LeetCode journey for the practice of data structure
 |               144. Binary Tree Preorder Traversal               |
 |              145. Binary Tree Postorder Traversal               |
 |                199. Binary Tree Right Side View                 |
+|                 222. Count Complete Tree Nodes                  |
+|                     226. Invert Binary Tree                     |
 |               230. Kth Smallest Element in a BST                |
 |          236. Lowest Common Ancestor of a Binary Tree           |
+|                     257. Binary Tree Paths                      |
+|                     404. Sum of Left Leaves                     |
 |                        437. Path Sum III                        |
+|                513. Find Bottom Left Tree Value                 |
+|                   617. Merge Two Binary Trees                   |
+|                    654. Maximum Binary Tree                     |
+
+## Graph
+
+|          Problem           |
+| :------------------------: |
+| 332. Reconstruct Itinerary |
+
+## Backtracking
+
+|                  Problem                  |
+| :---------------------------------------: |
+| 17. Letter Combinations of a Phone Number |
+|         22. Generate Parentheses          |
+|             37. Sudoku Solver             |
+|            39. Combination Sum            |
+|          40. Combination Sum II           |
+|             46. Permutations              |
+|            47. Permutations II            |
+|               51. N-Queens                |
+|              52. N-Queens II              |
+|             77. Combinations              |
+|                78. Subsets                |
+|              90. Subsets II               |
+|         93. Restore IP Addresses          |
+|             113. Path Sum II              |
+|       131. Palindrome Partitioning        |
+|         216. Combination Sum III          |
+|          257. Binary Tree Paths           |
+|        332. Reconstruct Itinerary         |
+|       491. Increasing Subsequences        |
 
 ## Dynamic Programming
 
@@ -168,6 +222,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |  121. Best Time to Buy and Sell Stock   |
 | 122. Best Time to Buy and Sell Stock II |
 |    124. Binary Tree Maximum Path Sum    |
+|      131. Palindrome Partitioning       |
 |          279. Perfect Squares           |
 |           343. Integer Break            |
 
