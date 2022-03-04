@@ -25,23 +25,40 @@ class Solution
 public:
     int countNodes(TreeNode* root)
     {
-        return dfs(root);
-    }
-
-
-    int dfs(TreeNode* root)
-    {
         if (root == nullptr)
         {
             return 0;
         }
-        
+
         if (root->left == nullptr && root->right == nullptr)
         {
             return 1;
         }
         
-        return dfs(root->left) + dfs(root->right) + 1;
+        TreeNode* left = root->left;
+        TreeNode* right = root->right;
+
+        int left_height = 0;
+        int right_height = 0;
+
+        while (left != nullptr)
+        {
+            left_height++;
+            left = left->left;
+        }
+        
+        while (right != nullptr)
+        {
+            right_height++;
+            right = right->right;
+        }
+        
+        if (left_height == right_height)
+        {
+            return (2 << left_height) - 1;
+        }
+        
+        return countNodes(root->left) + countNodes(root->right) + 1;
     }
 };
 
