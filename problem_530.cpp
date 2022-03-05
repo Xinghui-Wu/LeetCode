@@ -14,7 +14,6 @@
  * Related Topics: Tree, Depth-First Search, Breadth-First Search, Binary Search Tree, Binary Tree
  */
 #include <iostream>
-#include <vector>
 #include "node.h"
 
 using namespace std;
@@ -27,25 +26,28 @@ public:
     {
         int min_difference = 100000;
 
-        vector<int> val_list;
-        dfs(root, val_list);
+        TreeNode* previous = nullptr;
 
-        for (size_t i = 1; i < val_list.size(); i++)
-        {
-            min_difference = min(min_difference, val_list[i] - val_list[i - 1]);
-        }
+        dfs(root, previous, min_difference);
         
         return min_difference;
     }
 
 
-    void dfs(TreeNode* root, vector<int>& val_list)
+    void dfs(TreeNode* current, TreeNode*& previous, int& min_difference)
     {
-        if (root != nullptr)
+        if (current != nullptr)
         {
-            dfs(root->left, val_list);
-            val_list.push_back(root->val);
-            dfs(root->right, val_list);
+            dfs(current->left, previous, min_difference);
+
+            if (previous != nullptr)
+            {
+                min_difference = min(min_difference, current->val - previous->val);
+            }
+
+            previous = current;
+            
+            dfs(current->right, previous, min_difference);
         }
     }
 };
