@@ -25,27 +25,29 @@ class Solution
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)
     {
-        // If either p or q is found, return it.
         if (root == nullptr || root == p || root == q)
         {
             return root;
         }
-
-        // Search the left and right subtrees for p and q.
-        TreeNode* left = lowestCommonAncestor(root->left, p, q);
-        TreeNode* right = lowestCommonAncestor(root->right, p, q);
-
-        if (left == nullptr)
+        
+        // If p and q are on either side of root, root is the LCA.
+        if (p->val < root->val && q->val > root->val)
         {
-            return right;
+            return root;
         }
-        else if (right == nullptr)
+        if (p->val > root->val && q->val < root->val)
         {
-            return left;
+            return root;
+        }
+
+        // Narrow down the search space to the left or right subtree.
+        if (p->val < root->val)
+        {
+            return lowestCommonAncestor(root->left, p, q);
         }
         else
         {
-            return root;
+            return lowestCommonAncestor(root->right, p, q);
         }
     }
 };
