@@ -8,7 +8,7 @@
  * Constraints:
  *   0 <= n <= 30
  * 
- * Difficulty: Medium
+ * Difficulty: Easy
  * Related Topics: Math, Dynamic Programming, Recursion, Memoization
  */
 #include <iostream>
