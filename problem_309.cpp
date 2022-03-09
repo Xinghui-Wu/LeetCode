@@ -32,22 +32,18 @@ public:
             return 0;
         }
         
-        vector<vector<int>> dp(prices.size(), vector<int>(4, 0));
+        vector<vector<int>> dp(prices.size(), vector<int>(2, 0));
         dp[0][0] = -prices[0];
+        dp[1][0] = max(-prices[0], -prices[1]);
+        dp[1][1] = max(0, prices[1] - prices[0]);
 
-        for (size_t i = 1; i < prices.size(); i++)
+        for (size_t i = 2; i < prices.size(); i++)
         {
-            // The stock has been bought.
-            dp[i][0] = max(dp[i - 1][0], max(dp[i - 1][1], dp[i - 1][3]) - prices[i]);
-            // The stock was sold two days ago and today is not cooldown day.
-            dp[i][1] = max(dp[i - 1][1], dp[i - 1][3]);
-            // The stock was sold today.
-            dp[i][2] = dp[i - 1][0] + prices[i];
-            // Today is cooldown day.
-            dp[i][3] = dp[i - 1][2];
+            dp[i][0] = max(dp[i - 1][0], dp[i - 2][1] - prices[i]);
+            dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] + prices[i]);
         }
 
-        return max(dp[prices.size() - 1][1], max(dp[prices.size() - 1][2], dp[prices.size() - 1][3]));
+        return dp[prices.size() - 1][1];
     }
 };
 
