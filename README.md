@@ -22,6 +22,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |         279. Perfect Squares          |
 |          343. Integer Break           |
 |       371. Sum of Two Integers        |
+|         509. Fibonacci Number         |
 
 ## Linear List
 
@@ -56,19 +57,31 @@ This repository documents my LeetCode journey for the practice of data structure
 |                  119. Pascal's Triangle II                  |
 |            121. Best Time to Buy and Sell Stock             |
 |           122. Best Time to Buy and Sell Stock II           |
+|          123. Best Time to Buy and Sell Stock III           |
 |                     136. Single Number                      |
 |            150. Evaluate Reverse Polish Notation            |
 |           167. Two Sum II - Input Array Is Sorted           |
 |                    169. Majority Element                    |
+|           188. Best Time to Buy and Sell Stock IV           |
+|                      198. House Robber                      |
 |               209. Minimum Size Subarray Sum                |
+|                    213. House Robber II                     |
 |                  216. Combination Sum III                   |
 |                 239. Sliding Window Maximum                 |
 |               287. Find the Duplicate Number                |
+|                      322. Coin Change                       |
 |               349. Intersection of Two Arrays               |
+|                   377. Combination Sum IV                   |
+|               416. Partition Equal Subset Sum               |
 |                        454. 4Sum II                         |
+|                    474. Ones and Zeroes                     |
 |                491. Increasing Subsequences                 |
+|                       494. Target Sum                       |
+|                     518. Coin Change 2                      |
 |                     704. Binary Search                      |
+|                746. Min Cost Climbing Stairs                |
 |               977. Squares of a Sorted Array                |
+|                 1049. Last Stone Weight II                  |
 
 ### Linked List
 
@@ -120,6 +133,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |            93. Restore IP Addresses            |
 |             125. Valid Palindrome              |
 |          131. Palindrome Partitioning          |
+|                139. Word Break                 |
 |         151. Reverse Words in a String         |
 |         168. Excel Sheet Column Title          |
 |         171. Excel Sheet Column Number         |
@@ -129,6 +143,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |                383. Ransom Note                |
 |    387. First Unique Character in a String     |
 |        459. Repeated Substring Pattern         |
+|              474. Ones and Zeroes              |
 |             541. Reverse String II             |
 | 1047. Remove All Adjacent Duplicates In String |
 
@@ -171,13 +186,24 @@ This repository documents my LeetCode journey for the practice of data structure
 |                 222. Count Complete Tree Nodes                  |
 |                     226. Invert Binary Tree                     |
 |               230. Kth Smallest Element in a BST                |
+|       235. Lowest Common Ancestor of a Binary Search Tree       |
 |          236. Lowest Common Ancestor of a Binary Tree           |
 |                     257. Binary Tree Paths                      |
+|                      337. House Robber III                      |
 |                     404. Sum of Left Leaves                     |
 |                        437. Path Sum III                        |
+|                    450. Delete Node in a BST                    |
+|              501. Find Mode in Binary Search Tree               |
 |                513. Find Bottom Left Tree Value                 |
+|             530. Minimum Absolute Difference in BST             |
+|                538. Convert BST to Greater Tree                 |
 |                   617. Merge Two Binary Trees                   |
 |                    654. Maximum Binary Tree                     |
+|                 669. Trim a Binary Search Tree                  |
+|               700. Search in a Binary Search Tree               |
+|              701. Insert into a Binary Search Tree              |
+|             783. Minimum Distance Between BST Nodes             |
+|          1038. Binary Search Tree to Greater Sum Tree           |
 
 ## Graph
 
@@ -208,23 +234,39 @@ This repository documents my LeetCode journey for the practice of data structure
 |          257. Binary Tree Paths           |
 |        332. Reconstruct Itinerary         |
 |       491. Increasing Subsequences        |
+|              494. Target Sum              |
 
 ## Dynamic Programming
 
-|                 Problem                 |
-| :-------------------------------------: |
-|        22. Generate Parentheses         |
-|          53. Maximum Subarray           |
-|            62. Unique Paths             |
-|           63. Unique Paths II           |
-|           70. Climbing Stairs           |
-|     96. Unique Binary Search Trees      |
-|  121. Best Time to Buy and Sell Stock   |
-| 122. Best Time to Buy and Sell Stock II |
-|    124. Binary Tree Maximum Path Sum    |
-|      131. Palindrome Partitioning       |
-|          279. Perfect Squares           |
-|           343. Integer Break            |
+|                 Problem                  |
+| :--------------------------------------: |
+|         22. Generate Parentheses         |
+|           53. Maximum Subarray           |
+|             62. Unique Paths             |
+|           63. Unique Paths II            |
+|           70. Climbing Stairs            |
+|      96. Unique Binary Search Trees      |
+|   121. Best Time to Buy and Sell Stock   |
+| 122. Best Time to Buy and Sell Stock II  |
+| 123. Best Time to Buy and Sell Stock III |
+|    124. Binary Tree Maximum Path Sum     |
+|       131. Palindrome Partitioning       |
+|             139. Word Break              |
+| 188. Best Time to Buy and Sell Stock IV  |
+|            198. House Robber             |
+|           213. House Robber II           |
+|           279. Perfect Squares           |
+|             322. Coin Change             |
+|          337. House Robber III           |
+|            343. Integer Break            |
+|         377. Combination Sum IV          |
+|     416. Partition Equal Subset Sum      |
+|           474. Ones and Zeroes           |
+|             494. Target Sum              |
+|          509. Fibonacci Number           |
+|            518. Coin Change 2            |
+|      746. Min Cost Climbing Stairs       |
+|        1049. Last Stone Weight II        |
 
 ## Greedy
 
