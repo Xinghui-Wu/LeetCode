@@ -26,23 +26,21 @@ class Solution
 public:
     int maxProfit(vector<int>& prices)
     {
-        vector<vector<int>> dp(prices.size(), vector<int>(5, 0));
-        dp[0][1] = -prices[0];
-        dp[0][3] = -prices[0];
+        int dp[4] = {-prices[0], 0, -prices[0], 0};
 
         for (size_t i = 1; i < prices.size(); i++)
         {
             // Buy the stock for the first time.
-            dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
+            dp[0] = max(dp[0], -prices[i]);
             // Sell the stock for the first time.
-            dp[i][2] = max(dp[i - 1][2], dp[i - 1][1] + prices[i]);
+            dp[1] = max(dp[1], dp[0] + prices[i]);
             // Buy the stock for the second time.
-            dp[i][3] = max(dp[i - 1][3], dp[i - 1][2] - prices[i]);
+            dp[2] = max(dp[2], dp[1] - prices[i]);
             // Sell the stock for the second time.
-            dp[i][4] = max(dp[i - 1][4], dp[i - 1][3] + prices[i]);
+            dp[3] = max(dp[3], dp[2] + prices[i]);
         }
         
-        return dp[prices.size() - 1][4];
+        return dp[3];
     }
 };
 
