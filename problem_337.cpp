@@ -16,7 +16,6 @@
  * Related Topics: Dynamic Programming, Tree, Depth-First Search, Binary Tree
  */
 #include <iostream>
-#include <vector>
 #include "node.h"
 
 using namespace std;
@@ -27,26 +26,26 @@ class Solution
 public:
     int rob(TreeNode* root)
     {
-        vector<int> money = rob_tree(root);
+        pair<int, int> money = rob_tree(root);
 
-        return max(money[0], money[1]);
+        return max(money.first, money.second);
     }
 
 
-    vector<int> rob_tree(TreeNode* root)
+    pair<int, int> rob_tree(TreeNode* root)
     {
-        vector<int> dp = {0, 0};
+        pair<int, int> dp = {0, 0};
 
         if (root == nullptr)
         {
             return dp;
         }
         
-        vector<int> rob_left = rob_tree(root->left);
-        vector<int> rob_right = rob_tree(root->right);
+        pair<int, int> rob_left = rob_tree(root->left);
+        pair<int, int> rob_right = rob_tree(root->right);
 
-        dp[0] = max(rob_left[0], rob_left[1]) + max(rob_right[0], rob_right[1]);
-        dp[1] = rob_left[0] + rob_right[0] + root->val;
+        dp.first = max(rob_left.first, rob_left.second) + max(rob_right.first, rob_right.second);
+        dp.second = rob_left.first + rob_right.first + root->val;
 
         return dp;
     }
