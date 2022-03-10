@@ -25,8 +25,16 @@ public:
 
         int m = nums1.size();
         int n = nums2.size();
+        
+        int dp[m + 1][n + 1];
 
-        vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+        for (size_t i = 0; i <= m; i++)
+        {
+            for (size_t j = 0; j <= n; j++)
+            {
+                dp[i][j] = 0;
+            }
+        }
 
         for (size_t i = 1; i <= m; i++)
         {
