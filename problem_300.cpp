@@ -29,7 +29,12 @@ public:
         int length = 1;
 
         // dp[i] is the length of the LIS ending at i.
-        vector<int> dp(nums.size(), 1);
+        int dp[nums.size()];
+
+        for (size_t i = 0; i < nums.size(); i++)
+        {
+            dp[i] = 1;
+        }
 
         for (size_t i = 1; i < nums.size(); i++)
         {
