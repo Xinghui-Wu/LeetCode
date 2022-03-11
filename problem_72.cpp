@@ -15,6 +15,7 @@
  * Related Topics: String, Dynamic Programming
  */
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -49,7 +50,7 @@ public:
                 else
                 {
                     // Replace the words1[i - 1] with words2[j - 1], insert/delete words1[i - 1] or word2[j - 1]
-                    dp[i][j] = min(dp[i - 1][j - 1], min(dp[i - 1][j], dp[i][j - 1])) + 1;
+                    dp[i][j] = min({dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1]}) + 1;
                 }
             }
         }
