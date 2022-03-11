@@ -27,56 +27,20 @@ class Solution
 public:
     bool isSubsequence(string s, string t)
     {
-        if (s.empty())
+        int i = 0;
+        int j = 0;
+
+        while (i < s.size() && j < t.size())
         {
-            return true;
-        }
-
-        if (t.empty())
-        {
-            return false;
-        }
-        
-        int si = 0;
-        int sj = s.size() - 1;
-        int ti = 0;
-        int tj = t.size() - 1;
-
-        while (ti <= tj)
-        {
-            while (ti <= tj && t[ti] != s[si])
+            if (s[i] == t[j])
             {
-                ti++;
+                i++;
             }
-            while (ti <= tj && t[tj] != s[sj])
-            {
-                tj--;
-            }
-
-            if (ti <= tj && t[ti] == s[si] && t[ti] == s[si])
-            {
-                if (ti == tj && si != sj)
-                {
-                    return false;
-                }
-                
-                ti++;
-                tj--;
-                si++;
-                sj--;
-
-                if (si > sj)
-                {
-                    return true;
-                }
-            }
-            else
-            {
-                return false;
-            }
+            
+            j++;
         }
         
-        return false;
+        return i == s.size();
     }
 };
 
