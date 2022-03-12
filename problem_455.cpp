@@ -37,16 +37,11 @@ public:
         sort(g.begin(), g.end());
         sort(s.begin(), s.end());
 
-        for (size_t i = 0; i < s.size(); i++)
+        for (size_t i = 0; i < s.size() && num_children < g.size(); i++)
         {
             if (s[i] >= g[num_children])
             {
                 num_children++;
-            }
-
-            if (num_children == g.size())
-            {
-                return num_children;
             }
         }
 
