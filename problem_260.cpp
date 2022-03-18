@@ -16,7 +16,6 @@
  */
 #include <iostream>
 #include <vector>
-#include <unordered_map>
 
 using namespace std;
 
@@ -26,20 +25,26 @@ class Solution
 public:
     vector<int> singleNumber(vector<int>& nums)
     {
-        vector<int> single_numbers;
+        vector<int> single_numbers(2);
 
-        unordered_map<int, int> count_map;
+        int xor_sum = 0;
 
         for (int num: nums)
         {
-            count_map[num]++;
+            xor_sum ^= num;
         }
-
-        for (auto& count: count_map)
+        
+        int mask = (xor_sum == INT32_MIN ? xor_sum : xor_sum & -xor_sum);
+        
+        for (int num: nums)
         {
-            if (count.second == 1)
+            if (num & mask)
             {
-                single_numbers.push_back(count.first);
+                single_numbers[0] ^= num;
+            }
+            else
+            {
+                single_numbers[1] ^= num;
             }
         }
 
