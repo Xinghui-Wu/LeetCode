@@ -36,19 +36,17 @@ class Solution
 public:
     ListNode* reverseKGroup(ListNode* head, int k)
     {
+        // Count the length of the given list and the number of groups.
         int length = get_length(head);
         int num_groups = length / k;
 
-        if (length < k)
-        {
-            return head;
-        }
-
+        // Reverse nodes in the first group and save the new head.
         ListNodeTriplet triplet1 = reverseList(head, k);
-        ListNodeTriplet triplet2 = triplet1;
+        ListNodeTriplet triplet2;
 
         head = triplet1.head;
 
+        // Reverse nodes in the rest of the groups.
         for (int i = 1; i < num_groups; i++)
         {
             triplet2 = reverseList(triplet1.next_head, k);
@@ -56,7 +54,8 @@ public:
             triplet1 = triplet2;
         }
 
-        triplet2.tail->next = triplet2.next_head;
+        // Link the two adjacent groups in the end.
+        triplet1.tail->next = triplet1.next_head;
 
         return head;
     }
@@ -89,8 +88,6 @@ public:
             current = next;
             next = temp;
         }
-
-        head->next = nullptr;
         
         return {current, head, next};
     }
