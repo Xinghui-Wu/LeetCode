@@ -23,9 +23,50 @@ class Solution
 public:
     int findKthLargest(vector<int>& nums, int k)
     {
-        sort(nums.begin(), nums.end());
+        int length = nums.size();
 
-        return nums[nums.size() - k];
+        // Adjust from the last non-leaf node.
+        for (int i = length / 2 - 1; i >= 0; i--)
+        {
+            build_heap(nums, i, length - 1);
+        }
+        
+        // Swap the first and the i-th value to make the last portion of array sorted.
+        for (int i = length - 1; i >= length - k + 1; i--)
+        {
+            swap(nums[0], nums[i]);
+            build_heap(nums, 0, i - 1);
+        }
+
+        return nums[0];
+    }
+
+
+    void build_heap(vector<int>& nums, int start, int end)
+    {
+        int parent = start;
+        int child = 2 * parent + 1;
+
+        while (child <= end)
+        {
+            // Choose the larger child.
+            if (child + 1 <= end && nums[child] < nums[child + 1])
+            {
+                child++;
+            }
+            
+            // Compare the parent and the child.
+            if (nums[parent] > nums[child])
+            {
+                break;
+            }
+            else
+            {
+                swap(nums[parent], nums[child]);
+                parent = child;
+                child = 2 * parent + 1;
+            }
+        }
     }
 };
 
