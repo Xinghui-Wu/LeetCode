@@ -36,6 +36,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |                          18. 4Sum                           |
 |           26. Remove Duplicates from Sorted Array           |
 |                     27. Remove Element                      |
+|             33. Search in Rotated Sorted Array              |
 | 34. Find First and Last Position of Element in Sorted Array |
 |                 35. Search Insert Position                  |
 |                      37. Sudoku Solver                      |
@@ -59,28 +60,40 @@ This repository documents my LeetCode journey for the practice of data structure
 |           122. Best Time to Buy and Sell Stock II           |
 |          123. Best Time to Buy and Sell Stock III           |
 |                     136. Single Number                      |
+|                    137. Single Number II                    |
 |            150. Evaluate Reverse Polish Notation            |
 |           167. Two Sum II - Input Array Is Sorted           |
 |                    169. Majority Element                    |
 |           188. Best Time to Buy and Sell Stock IV           |
 |                      198. House Robber                      |
+|                   200. Number of Islands                    |
 |               209. Minimum Size Subarray Sum                |
 |                    213. House Robber II                     |
+|            215. Kth Largest Element in an Array             |
 |                  216. Combination Sum III                   |
 |                 239. Sliding Window Maximum                 |
+|                   260. Single Number III                    |
 |               287. Find the Duplicate Number                |
+|             300. Longest Increasing Subsequence             |
+|     309. Best Time to Buy and Sell Stock with Cooldown      |
 |                      322. Coin Change                       |
 |               349. Intersection of Two Arrays               |
+|                   376. Wiggle Subsequence                   |
 |                   377. Combination Sum IV                   |
 |               416. Partition Equal Subset Sum               |
 |                        454. 4Sum II                         |
+|                     455. Assign Cookies                     |
 |                    474. Ones and Zeroes                     |
 |                491. Increasing Subsequences                 |
 |                       494. Target Sum                       |
 |                     518. Coin Change 2                      |
+|       674. Longest Continuous Increasing Subsequence        |
 |                     704. Binary Search                      |
+|  714. Best Time to Buy and Sell Stock with Transaction Fee  |
+|          718. Maximum Length of Repeated Subarray           |
 |                746. Min Cost Climbing Stairs                |
 |               977. Squares of a Sorted Array                |
+|                    1035. Uncrossed Lines                    |
 |                 1049. Last Stone Weight II                  |
 
 ### Linked List
@@ -92,10 +105,13 @@ This repository documents my LeetCode journey for the practice of data structure
 |        21. Merge Two Sorted Lists         |
 |         23. Merge k Sorted Lists          |
 |          24. Swap Nodes in Pairs          |
+|       25. Reverse Nodes in k-Group        |
 | 82. Remove Duplicates from Sorted List II |
 |  83. Remove Duplicates from Sorted List   |
 |          141. Linked List Cycle           |
 |         142. Linked List Cycle II         |
+|             143. Reorder List             |
+|              146. LRU Cache               |
 |              148. Sort List               |
 |   160. Intersection of Two Linked Lists   |
 |     203. Remove Linked List Elements      |
@@ -118,46 +134,57 @@ This repository documents my LeetCode journey for the practice of data structure
 
 ## String
 
-|                    Problem                     |
-| :--------------------------------------------: |
-|              13. Roman to Integer              |
-|           14. Longest Common Prefix            |
-|   17. Letter Combinations of a Phone Number    |
-|             20. Valid Parentheses              |
-|            22. Generate Parentheses            |
-|             28. Implement strStr()             |
-|               38. Count and Say                |
-|            58. Length of Last Word             |
-|                 67. Add Binary                 |
-|               71. Simplify Path                |
-|            93. Restore IP Addresses            |
-|             125. Valid Palindrome              |
-|          131. Palindrome Partitioning          |
-|                139. Word Break                 |
-|         151. Reverse Words in a String         |
-|         168. Excel Sheet Column Title          |
-|         171. Excel Sheet Column Number         |
-|              179. Largest Number               |
-|               242. Valid Anagram               |
-|              344. Reverse String               |
-|                383. Ransom Note                |
-|    387. First Unique Character in a String     |
-|        459. Repeated Substring Pattern         |
-|              474. Ones and Zeroes              |
-|             541. Reverse String II             |
-| 1047. Remove All Adjacent Duplicates In String |
+|                      Problem                      |
+| :-----------------------------------------------: |
+| 3. Longest Substring Without Repeating Characters |
+|            8. String to Integer (atoi)            |
+|               13. Roman to Integer                |
+|             14. Longest Common Prefix             |
+|     17. Letter Combinations of a Phone Number     |
+|               20. Valid Parentheses               |
+|             22. Generate Parentheses              |
+|              28. Implement strStr()               |
+|                 38. Count and Say                 |
+|              58. Length of Last Word              |
+|                  67. Add Binary                   |
+|                 71. Simplify Path                 |
+|                 72. Edit Distance                 |
+|             93. Restore IP Addresses              |
+|            115. Distinct Subsequences             |
+|               125. Valid Palindrome               |
+|           131. Palindrome Partitioning            |
+|                  139. Word Break                  |
+|          151. Reverse Words in a String           |
+|           168. Excel Sheet Column Title           |
+|          171. Excel Sheet Column Number           |
+|                179. Largest Number                |
+|                242. Valid Anagram                 |
+|                344. Reverse String                |
+|                 383. Ransom Note                  |
+|      387. First Unique Character in a String      |
+|                392. Is Subsequence                |
+|          459. Repeated Substring Pattern          |
+|               474. Ones and Zeroes                |
+|       516. Longest Palindromic Subsequence        |
+|              541. Reverse String II               |
+|       583. Delete Operation for Two Strings       |
+|            647. Palindromic Substrings            |
+|  1047. Remove All Adjacent Duplicates In String   |
+|         1143. Longest Common Subsequence          |
 
 ## Hash Table
 
-|             Problem             |
-| :-----------------------------: |
-|           1. Two Sum            |
-|      13. Roman to Integer       |
-|        202. Happy Number        |
-|       242. Valid Anagram        |
-| 349. Intersection of Two Arrays |
-|        383. Ransom Note         |
-|          454. 4Sum II           |
+|                      Problem                      |
+| :-----------------------------------------------: |
+|                    1. Two Sum                     |
+| 3. Longest Substring Without Repeating Characters |
+|               13. Roman to Integer                |
+|                  146. LRU Cache                   |
+|                 202. Happy Number                 |
+|                242. Valid Anagram                 |
+|          349. Intersection of Two Arrays          |
+|                 383. Ransom Note                  |
+|                   454. 4Sum II                    |
 
 ## Tree
 
@@ -209,6 +236,7 @@ This repository documents my LeetCode journey for the practice of data structure
 
 |          Problem           |
 | :------------------------: |
+|   200. Number of Islands   |
 | 332. Reconstruct Itinerary |
 
 ## Backtracking
@@ -238,38 +266,53 @@ This repository documents my LeetCode journey for the practice of data structure
 
 ## Dynamic Programming
 
-|                 Problem                  |
-| :--------------------------------------: |
-|         22. Generate Parentheses         |
-|           53. Maximum Subarray           |
-|             62. Unique Paths             |
-|           63. Unique Paths II            |
-|           70. Climbing Stairs            |
-|      96. Unique Binary Search Trees      |
-|   121. Best Time to Buy and Sell Stock   |
-| 122. Best Time to Buy and Sell Stock II  |
-| 123. Best Time to Buy and Sell Stock III |
-|    124. Binary Tree Maximum Path Sum     |
-|       131. Palindrome Partitioning       |
-|             139. Word Break              |
-| 188. Best Time to Buy and Sell Stock IV  |
-|            198. House Robber             |
-|           213. House Robber II           |
-|           279. Perfect Squares           |
-|             322. Coin Change             |
-|          337. House Robber III           |
-|            343. Integer Break            |
-|         377. Combination Sum IV          |
-|     416. Partition Equal Subset Sum      |
-|           474. Ones and Zeroes           |
-|             494. Target Sum              |
-|          509. Fibonacci Number           |
-|            518. Coin Change 2            |
-|      746. Min Cost Climbing Stairs       |
-|        1049. Last Stone Weight II        |
+|                          Problem                          |
+| :-------------------------------------------------------: |
+|                 22. Generate Parentheses                  |
+|                   53. Maximum Subarray                    |
+|                     62. Unique Paths                      |
+|                    63. Unique Paths II                    |
+|                    70. Climbing Stairs                    |
+|                     72. Edit Distance                     |
+|              96. Unique Binary Search Trees               |
+|                115. Distinct Subsequences                 |
+|           121. Best Time to Buy and Sell Stock            |
+|          122. Best Time to Buy and Sell Stock II          |
+|         123. Best Time to Buy and Sell Stock III          |
+|             124. Binary Tree Maximum Path Sum             |
+|               131. Palindrome Partitioning                |
+|                      139. Word Break                      |
+|          188. Best Time to Buy and Sell Stock IV          |
+|                     198. House Robber                     |
+|                   213. House Robber II                    |
+|                   279. Perfect Squares                    |
+|            300. Longest Increasing Subsequence            |
+|    309. Best Time to Buy and Sell Stock with Cooldown     |
+|                     322. Coin Change                      |
+|                   337. House Robber III                   |
+|                    343. Integer Break                     |
+|                  377. Combination Sum IV                  |
+|                    392. Is Subsequence                    |
+|              416. Partition Equal Subset Sum              |
+|                   474. Ones and Zeroes                    |
+|                      494. Target Sum                      |
+|                   509. Fibonacci Number                   |
+|           516. Longest Palindromic Subsequence            |
+|                    518. Coin Change 2                     |
+|           583. Delete Operation for Two Strings           |
+|                647. Palindromic Substrings                |
+|      674. Longest Continuous Increasing Subsequence       |
+| 714. Best Time to Buy and Sell Stock with Transaction Fee |
+|         718. Maximum Length of Repeated Subarray          |
+|               746. Min Cost Climbing Stairs               |
+|                   1035. Uncrossed Lines                   |
+|                1049. Last Stone Weight II                 |
+|             1143. Longest Common Subsequence              |
 
 ## Greedy
 
-|       Problem       |
-| :-----------------: |
-| 179. Largest Number |
+|         Problem         |
+| :---------------------: |
+|   179. Largest Number   |
+| 376. Wiggle Subsequence |
+|   455. Assign Cookies   |
