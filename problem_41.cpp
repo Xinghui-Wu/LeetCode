@@ -13,7 +13,6 @@
  */
 #include <iostream>
 #include <vector>
-#include <unordered_set>
 
 using namespace std;
 
@@ -23,24 +22,40 @@ class Solution
 public:
     int firstMissingPositive(vector<int>& nums)
     {
-        int missing_positive = 1;
+        int n = nums.size();
 
-        unordered_set<int> num_set;
-
-        for (int num: nums)
+        // Make all the negative values and zero positive.
+        for (size_t i = 0; i < n; i++)
         {
-            num_set.insert(num);
-        }
-
-        for (; missing_positive <= INT32_MAX; missing_positive++)
-        {
-            if (num_set.count(missing_positive) == 0)
+            if (nums[i] <= 0)
             {
-                return missing_positive;
+                nums[i] = n + 1;
             }
         }
 
-        return missing_positive;
+        int num;
+        
+        // Mark the element.
+        for (size_t i = 0; i < n; i++)
+        {
+            num = abs(nums[i]);
+
+            if (num <= n)
+            {
+                nums[num - 1] = -abs(nums[num - 1]);
+            }
+        }
+        
+        // Find the missing positive.
+        for (size_t i = 0; i < n; i++)
+        {
+            if (nums[i] > 0)
+            {
+                return i + 1;
+            }
+        }
+        
+        return n + 1;
     }
 };
 
