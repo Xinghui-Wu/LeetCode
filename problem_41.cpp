@@ -13,6 +13,7 @@
  */
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 
 using namespace std;
 
@@ -24,16 +25,16 @@ public:
     {
         int missing_positive = 1;
 
+        unordered_set<int> num_set;
+
+        for (int num: nums)
+        {
+            num_set.insert(num);
+        }
+
         for (; missing_positive <= INT32_MAX; missing_positive++)
         {
-            int i = 0;
-
-            while (i < nums.size() && nums[i] != missing_positive)
-            {
-                i++;
-            }
-            
-            if (i == nums.size())
+            if (num_set.count(missing_positive) == 0)
             {
                 return missing_positive;
             }
