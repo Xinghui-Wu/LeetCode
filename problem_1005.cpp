@@ -16,7 +16,8 @@
  */
 #include <iostream>
 #include <vector>
-#include <queue>
+#include <algorithm>
+#include <numeric>
 
 using namespace std;
 
@@ -26,26 +27,26 @@ class Solution
 public:
     int largestSumAfterKNegations(vector<int>& nums, int k)
     {
-        int largest_sum = 0;
+        // Sort the array according to the abs value.
+        sort(nums.begin(), nums.end(), [](int a, int b) { return abs(a) > abs(b); });
 
-        priority_queue<int, vector<int>, greater<int>> queue(nums.begin(), nums.end());
-        int min_value;
-
-        // Each time modify the minimal of the current array.
-        for (int i = 0; i < k; i++)
+        // Modify the smaller negatives at first.
+        for (int i = 0; i < nums.size() && k > 0; i++)
         {
-            min_value = queue.top();
-            queue.pop();
-            queue.push(-min_value);
+            if (nums[i] < 0)
+            {
+                nums[i] *= -1;
+                k--;
+            }
+        }
+        
+        // Modify the smallest non-negative if needed.
+        if (k % 2 == 1)
+        {
+            nums[nums.size() - 1] *= -1;
         }
 
-        for (int i = 0; i < nums.size(); i++)
-        {
-            largest_sum += queue.top();
-            queue.pop();
-        }
-
-        return largest_sum;
+        return accumulate(nums.begin(), nums.end(), 0);
     }
 };
 
