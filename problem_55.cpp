@@ -23,36 +23,21 @@ class Solution
 public:
     bool canJump(vector<int>& nums)
     {
+        // Save the farest location that can be reached.
+        int largest_index = nums[0];
         int n = nums.size();
 
-        if (n == 1)
+        for (int i = 0; i <= largest_index; i++)
         {
-            return true;
-        }
-        
-        // dp[i] shows whether it is feasible to jump to i.
-        bool dp[n];
+            largest_index = max(largest_index, i + nums[i]);
 
-        for (int i = 0; i < n; i++)
-        {
-            dp[i] = false;
-        }
-        
-        dp[0] = true;
-
-        for (int i = 1; i < n; i++)
-        {
-            for (int j = i - 1; j >= 0; j--)
+            if (largest_index >= n - 1)
             {
-                if (dp[j] && j + nums[j] >= i)
-                {
-                    dp[i] = true;
-                    break;
-                }
+                return true;
             }
         }
         
-        return dp[n - 1];
+        return false;
     }
 };
 
