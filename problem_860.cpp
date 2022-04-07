@@ -29,13 +29,13 @@ public:
         int five = 0;
         int ten = 0;
 
-        for (size_t i = 0; i < bills.size(); i++)
+        for (auto& bill: bills)
         {
-            if (bills[i] == 5)
+            if (bill == 5)
             {
                 five++;
             }
-            else if (bills[i] == 10)
+            else if (bill == 10)
             {
                 if (five == 0)
                 {
@@ -47,11 +47,7 @@ public:
             }
             else
             {
-                if (five == 0)
-                {
-                    return false;
-                }
-                else if (ten > 0)
+                if (five > 0 && ten > 0)
                 {
                     five--;
                     ten--;
