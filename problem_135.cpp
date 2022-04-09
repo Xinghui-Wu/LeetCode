@@ -18,7 +18,6 @@
  */
 #include <iostream>
 #include <vector>
-#include <numeric>
 
 using namespace std;
 
@@ -28,41 +27,43 @@ class Solution
 public:
     int candy(vector<int>& ratings)
     {
-        int n = ratings.size();
+        int num_candies = 1;
 
-        if (n == 1)
+        int increasing_length = 1;
+        int decreasing_length = 0;
+        int previous = 1;
+
+        for (int i = 1; i < ratings.size(); i++)
         {
-            return 1;
-        }
-
-        vector<int> candies(n);
-
-        // Make sure that the right child get one more candy than the left child if needed.
-        for (int i = 1; i < n; i++)
-        {
-            if (ratings[i] > ratings[i - 1])
+            if (ratings[i] >= ratings[i - 1])
             {
-                candies[i] = candies[i - 1] + 1;
+                decreasing_length = 0;
+                previous = ratings[i] == ratings[i - 1] ? 1 : previous + 1;
+                num_candies += previous;
+                increasing_length = previous;
+            }
+            else
+            {
+                decreasing_length++;
+
+                if (decreasing_length == increasing_length)
+                {
+                    decreasing_length++;
+                }
+                
+                num_candies += decreasing_length;
+                previous = 1;
             }
         }
 
-        // Make sure that the left child get one more candy than the right child if needed.
-        for (int i = n - 2; i >= 0; i--)
-        {
-            if (ratings[i] > ratings[i + 1])
-            {
-                candies[i] = max(candies[i], candies[i + 1] + 1);
-            }
-        }
-        
-        return accumulate(candies.begin(), candies.end(), n);
+        return num_candies;
     }
 };
 
 
 int main()
 {
-    vector<int> ratings = {1, 2, 2};
+    vector<int> ratings = {1, 3, 5, 2, 3, 3};
 
     Solution solution;
     int num_candies = solution.candy(ratings);
