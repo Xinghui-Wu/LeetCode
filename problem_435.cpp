@@ -23,32 +23,23 @@ class Solution
 public:
     int eraseOverlapIntervals(vector<vector<int>>& intervals)
     {
-        int num_intervals = 0;
+        int num_intervals = 1;
 
-        sort(intervals.begin(), intervals.end());
+        // Sort the intervals based on the right bounds.
+        sort(intervals.begin(), intervals.end(), [](const auto& u, const auto& v) { return u[1] < v[1]; });
 
-        int interval[2] = {intervals[0][0], intervals[0][1]};
+        int right = intervals[0][1];
 
         for (size_t i = 1; i < intervals.size(); i++)
         {
-            if (interval[1] > intervals[i][0])
+            if (right <= intervals[i][0])
             {
+                right = intervals[i][1];
                 num_intervals++;
-
-                if (intervals[i][1] < interval[1])
-                {
-                    interval[0] = intervals[i][0];
-                    interval[1] = intervals[i][1];
-                }
-            }
-            else
-            {
-                interval[0] = intervals[i][0];
-                interval[1] = intervals[i][1];
             }
         }
 
-        return num_intervals;
+        return intervals.size() - num_intervals;
     }
 };
 
