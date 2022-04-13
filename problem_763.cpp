@@ -26,48 +26,27 @@ public:
     {
         vector<int> part_sizes;
 
-        // Record the first and last occurrences of each character.
-        vector<vector<int>> occurrences(26, vector<int>(2, -1));
+        // Record the last occurrences of each character.
+        int last_indices[26];
+        
+        for (int i = 0; i < s.size(); i++)
+        {
+            last_indices[s[i] - 'a'] = i;
+        }
+
+        int start_index = 0;
+        int end_index = 0;
 
         for (int i = 0; i < s.size(); i++)
         {
-            if (occurrences[s[i] - 'a'][0] == -1)
+            end_index = max(end_index, last_indices[s[i] - 'a']);
+
+            if (i == end_index)
             {
-                occurrences[s[i] - 'a'][0] = i;
+                part_sizes.push_back(end_index - start_index + 1);
+                start_index = end_index + 1;
             }
         }
-
-        for (int i = s.size() - 1; i >= 0; i--)
-        {
-            if (occurrences[s[i] - 'a'][1] == -1)
-            {
-                occurrences[s[i] - 'a'][1] = i;
-            }
-        }
-
-        int interval[2] = {occurrences[s[0] - 'a'][0], occurrences[s[0] - 'a'][1]};
-        int left;
-        int right;
-
-        for (int i = 1; i < s.size(); i++)
-        {
-            left = occurrences[s[i] - 'a'][0];
-            right = occurrences[s[i] - 'a'][1];
-
-            if (left < interval[1])
-            {
-                interval[1] = max(interval[1], right);
-            }
-            else
-            {
-                part_sizes.push_back(interval[1] - interval[0] + 1);
-
-                interval[0] = left;
-                interval[1] = right;
-            }
-        }
-
-        part_sizes.push_back(interval[1] - interval[0] + 1);
 
         return part_sizes;
     }
