@@ -22,7 +22,9 @@ This repository documents my LeetCode journey for the practice of data structure
 |         279. Perfect Squares          |
 |          343. Integer Break           |
 |       371. Sum of Two Integers        |
+|           415. Add Strings            |
 |         509. Fibonacci Number         |
+|    738. Monotone Increasing Digits    |
 
 ## Linear List
 
@@ -36,18 +38,24 @@ This repository documents my LeetCode journey for the practice of data structure
 |                          18. 4Sum                           |
 |           26. Remove Duplicates from Sorted Array           |
 |                     27. Remove Element                      |
+|                    31. Next Permutation                     |
 |             33. Search in Rotated Sorted Array              |
 | 34. Find First and Last Position of Element in Sorted Array |
 |                 35. Search Insert Position                  |
 |                      37. Sudoku Solver                      |
 |                     39. Combination Sum                     |
 |                   40. Combination Sum II                    |
+|                 41. First Missing Positive                  |
+|                   42. Trapping Rain Water                   |
+|                      45. Jump Game II                       |
 |                      46. Permutations                       |
 |                     47. Permutations II                     |
 |                        51. N-Queens                         |
 |                       52. N-Queens II                       |
 |                    53. Maximum Subarray                     |
 |                      54. Spiral Matrix                      |
+|                        55. Jump Game                        |
+|                     56. Merge Intervals                     |
 |                    59. Spiral Matrix II                     |
 |                        66. Plus One                         |
 |                      77. Combinations                       |
@@ -59,9 +67,12 @@ This repository documents my LeetCode journey for the practice of data structure
 |            121. Best Time to Buy and Sell Stock             |
 |           122. Best Time to Buy and Sell Stock II           |
 |          123. Best Time to Buy and Sell Stock III           |
+|                      134. Gas Station                       |
+|                         135. Candy                          |
 |                     136. Single Number                      |
 |                    137. Single Number II                    |
 |            150. Evaluate Reverse Polish Notation            |
+|                   162. Find Peak Element                    |
 |           167. Two Sum II - Input Array Is Sorted           |
 |                    169. Majority Element                    |
 |           188. Best Time to Buy and Sell Stock IV           |
@@ -71,6 +82,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |                    213. House Robber II                     |
 |            215. Kth Largest Element in an Array             |
 |                  216. Combination Sum III                   |
+|                     221. Maximal Square                     |
 |                 239. Sliding Window Maximum                 |
 |                   260. Single Number III                    |
 |               287. Find the Duplicate Number                |
@@ -80,7 +92,10 @@ This repository documents my LeetCode journey for the practice of data structure
 |               349. Intersection of Two Arrays               |
 |                   376. Wiggle Subsequence                   |
 |                   377. Combination Sum IV                   |
+|             406. Queue Reconstruction by Height             |
 |               416. Partition Equal Subset Sum               |
+|               435. Non-overlapping Intervals                |
+|       452. Minimum Number of Arrows to Burst Balloons       |
 |                        454. 4Sum II                         |
 |                     455. Assign Cookies                     |
 |                    474. Ones and Zeroes                     |
@@ -92,7 +107,9 @@ This repository documents my LeetCode journey for the practice of data structure
 |  714. Best Time to Buy and Sell Stock with Transaction Fee  |
 |          718. Maximum Length of Repeated Subarray           |
 |                746. Min Cost Climbing Stairs                |
+|                    860. Lemonade Change                     |
 |               977. Squares of a Sorted Array                |
+|        1005. Maximize Sum Of Array After K Negations        |
 |                    1035. Uncrossed Lines                    |
 |                 1049. Last Stone Weight II                  |
 
@@ -108,6 +125,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |       25. Reverse Nodes in k-Group        |
 | 82. Remove Duplicates from Sorted List II |
 |  83. Remove Duplicates from Sorted List   |
+|        92. Reverse Linked List II         |
 |          141. Linked List Cycle           |
 |         142. Linked List Cycle II         |
 |             143. Reorder List             |
@@ -126,6 +144,8 @@ This repository documents my LeetCode journey for the practice of data structure
 |                    Problem                     |
 | :--------------------------------------------: |
 |             20. Valid Parentheses              |
+|         32. Longest Valid Parentheses          |
+|            42. Trapping Rain Water             |
 |               71. Simplify Path                |
 |     150. Evaluate Reverse Polish Notation      |
 |          239. Sliding Window Maximum           |
@@ -137,6 +157,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |                      Problem                      |
 | :-----------------------------------------------: |
 | 3. Longest Substring Without Repeating Characters |
+|         5. Longest Palindromic Substring          |
 |            8. String to Integer (atoi)            |
 |               13. Roman to Integer                |
 |             14. Longest Common Prefix             |
@@ -144,11 +165,13 @@ This repository documents my LeetCode journey for the practice of data structure
 |               20. Valid Parentheses               |
 |             22. Generate Parentheses              |
 |              28. Implement strStr()               |
+|           32. Longest Valid Parentheses           |
 |                 38. Count and Say                 |
 |              58. Length of Last Word              |
 |                  67. Add Binary                   |
 |                 71. Simplify Path                 |
 |                 72. Edit Distance                 |
+|           76. Minimum Window Substring            |
 |             93. Restore IP Addresses              |
 |            115. Distinct Subsequences             |
 |               125. Valid Palindrome               |
@@ -163,12 +186,14 @@ This repository documents my LeetCode journey for the practice of data structure
 |                 383. Ransom Note                  |
 |      387. First Unique Character in a String      |
 |                392. Is Subsequence                |
+|                 415. Add Strings                  |
 |          459. Repeated Substring Pattern          |
 |               474. Ones and Zeroes                |
 |       516. Longest Palindromic Subsequence        |
 |              541. Reverse String II               |
 |       583. Delete Operation for Two Strings       |
 |            647. Palindromic Substrings            |
+|               763. Partition Labels               |
 |  1047. Remove All Adjacent Duplicates In String   |
 |         1143. Longest Common Subsequence          |
 
@@ -207,6 +232,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |                          112. Path Sum                          |
 |                        113. Path Sum II                         |
 |                124. Binary Tree Maximum Path Sum                |
+|                  129. Sum Root to Leaf Numbers                  |
 |               144. Binary Tree Preorder Traversal               |
 |              145. Binary Tree Postorder Traversal               |
 |                199. Binary Tree Right Side View                 |
@@ -226,10 +252,12 @@ This repository documents my LeetCode journey for the practice of data structure
 |                538. Convert BST to Greater Tree                 |
 |                   617. Merge Two Binary Trees                   |
 |                    654. Maximum Binary Tree                     |
+|                662. Maximum Width of Binary Tree                |
 |                 669. Trim a Binary Search Tree                  |
 |               700. Search in a Binary Search Tree               |
 |              701. Insert into a Binary Search Tree              |
 |             783. Minimum Distance Between BST Nodes             |
+|                    968. Binary Tree Cameras                     |
 |          1038. Binary Search Tree to Greater Sum Tree           |
 
 ## Graph
@@ -268,8 +296,13 @@ This repository documents my LeetCode journey for the practice of data structure
 
 |                          Problem                          |
 | :-------------------------------------------------------: |
+|             5. Longest Palindromic Substring              |
 |                 22. Generate Parentheses                  |
+|               32. Longest Valid Parentheses               |
+|                  42. Trapping Rain Water                  |
+|                     45. Jump Game II                      |
 |                   53. Maximum Subarray                    |
+|                       55. Jump Game                       |
 |                     62. Unique Paths                      |
 |                    63. Unique Paths II                    |
 |                    70. Climbing Stairs                    |
@@ -285,6 +318,7 @@ This repository documents my LeetCode journey for the practice of data structure
 |          188. Best Time to Buy and Sell Stock IV          |
 |                     198. House Robber                     |
 |                   213. House Robber II                    |
+|                    221. Maximal Square                    |
 |                   279. Perfect Squares                    |
 |            300. Longest Increasing Subsequence            |
 |    309. Best Time to Buy and Sell Stock with Cooldown     |
@@ -305,14 +339,28 @@ This repository documents my LeetCode journey for the practice of data structure
 | 714. Best Time to Buy and Sell Stock with Transaction Fee |
 |         718. Maximum Length of Repeated Subarray          |
 |               746. Min Cost Climbing Stairs               |
+|                 968. Binary Tree Cameras                  |
 |                   1035. Uncrossed Lines                   |
 |                1049. Last Stone Weight II                 |
 |             1143. Longest Common Subsequence              |
 
 ## Greedy
 
-|         Problem         |
-| :---------------------: |
-|   179. Largest Number   |
-| 376. Wiggle Subsequence |
-|   455. Assign Cookies   |
+|                     Problem                     |
+| :---------------------------------------------: |
+|                45. Jump Game II                 |
+|                  55. Jump Game                  |
+|     122. Best Time to Buy and Sell Stock II     |
+|                134. Gas Station                 |
+|                   135. Candy                    |
+|               179. Largest Number               |
+|             376. Wiggle Subsequence             |
+|       406. Queue Reconstruction by Height       |
+|         435. Non-overlapping Intervals          |
+| 452. Minimum Number of Arrows to Burst Balloons |
+|               455. Assign Cookies               |
+|         738. Monotone Increasing Digits         |
+|              763. Partition Labels              |
+|              860. Lemonade Change               |
+|            968. Binary Tree Cameras             |
+|  1005. Maximize Sum Of Array After K Negations  |
